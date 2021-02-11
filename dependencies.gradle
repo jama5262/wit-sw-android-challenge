@@ -1,0 +1,17 @@
+ext {
+    // Kotlin
+    kotlinVersion = "1.4.21"
+
+    // Android Core
+    compSdk = 30
+    targetSdk = 30
+    minSdk = 16
+    buildTools = "30.0.2"
+
+// App Versioning
+    versionCode = 1
+    versionName = "1.0"
+
+
+
+}
