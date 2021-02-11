@@ -1,0 +1,54 @@
+ext {
+    // Kotlin
+    kotlinVersion = "1.4.21"
+
+    // Android Core
+    compileSdkVer = 30
+    targetSdkVer = 30
+    minSdkVer = 16
+    buildToolsVer = "30.0.2"
+
+    // App Versioning
+    versionCode = 1
+    versionName = "1.0"
+
+    // Dependencies Versions - Presentation
+    appcompatVersion = '1.2.0'
+    androidxCoreKtxVersion = '1.3.2'
+    constraintLayoutVersion = '1.1.3'
+    materialVersion = '1.3.0'
+
+    // Data Versions
+
+    // Domain Versions
+    coroutinesCoreVersion = '1.3.3'
+
+    // Testing Versions
+    junitVersion = '4.+'
+    androidxJunitVersion = '1.1.2'
+    espressoVersion = '3.3.0'
+
+    // Presentation Layer
+    appDependencies = [
+            appCompat: "androidx.appcompat:appcompat:$appcompatVersion",
+            androidxKtx: "androidx.core:core-ktx:$androidxCoreKtxVersion",
+            constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            material: "com.google.android.material:material:$materialVersion"
+    ]
+
+    // Data Layer
+    dataDependencies = []
+
+    // Domain Layer
+    domainDependencies = [
+            kotlin : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            coroutinesCore: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion"
+    ]
+
+    testDependencies = [
+            junit: "junit:junit:$junitVersion",
+            androidxJunit: "androidx.test.ext:junit:$androidxJunitVersion",
+            espressoCore: "androidx.test.espresso:espresso-core:$espressoVersion",
+    ]
+
+}
