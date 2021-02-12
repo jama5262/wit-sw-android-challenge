@@ -19,6 +19,8 @@ ext {
     materialVersion = '1.3.0'
 
     // Data Versions
+    retrofitVersion = '2.9.0'
+    moshiConverterVersion = '2.9.0'
 
     // Domain Versions
     coroutinesCoreVersion = '1.3.3'
@@ -37,7 +39,10 @@ ext {
     ]
 
     // Data Layer
-    dataDependencies = []
+    dataDependencies = [
+            retrofit: "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            moshiConverter: "com.squareup.retrofit2:converter-moshi:$moshiConverterVersion"
+    ]
 
     // Domain Layer
     domainDependencies = [
