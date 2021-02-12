@@ -2,6 +2,7 @@ package com.jama.data_remote.repositories
 
 import com.jama.data_remote.api.OpenWeatherService
 import com.jama.data_remote.helpers.Constants
+import com.jama.data_remote.mappers.toDomain
 import com.jama.domain.models.WeatherResult
 import com.jama.domain.repositories.WeatherRepository
 
@@ -10,7 +11,9 @@ class ImplWeatherRepository(
 ): WeatherRepository {
 
     override suspend fun getWeather(appId: String): WeatherResult {
-        // TODO: 2/12/2021
+        return openWeatherService.getWeather(getCityIds(), appId)
+            .body()!!
+            .toDomain()
     }
 
     private fun getCityIds(): String {
