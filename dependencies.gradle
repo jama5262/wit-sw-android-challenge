@@ -17,6 +17,7 @@ ext {
     androidxCoreKtxVersion = '1.3.2'
     constraintLayoutVersion = '1.1.3'
     materialVersion = '1.3.0'
+    navigationVersion = "2.3.3"
 
     // Data Versions
     retrofitVersion = '2.9.0'
@@ -35,7 +36,9 @@ ext {
             appCompat: "androidx.appcompat:appcompat:$appcompatVersion",
             androidxKtx: "androidx.core:core-ktx:$androidxCoreKtxVersion",
             constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
-            material: "com.google.android.material:material:$materialVersion"
+            material: "com.google.android.material:material:$materialVersion",
+            navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            navigationUI: "androidx.navigation:navigation-ui-ktx:$navigationVersion",
     ]
 
     // Data Layer
