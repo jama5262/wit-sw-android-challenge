@@ -8,7 +8,7 @@ class GetWeatherUseCase (
 ): BaseUseCase<String, WeatherResult> {
 
     override suspend fun invoke(param: String): WeatherResult {
-        return weatherRepository.getWeather()
+        return weatherRepository.getWeather(param)
     }
 
 }
