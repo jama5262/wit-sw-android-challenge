@@ -60,6 +60,10 @@ dependencies {
     implementation appDependencies.navigationFragment
     implementation appDependencies.navigationUI
 
+    // Koin
+    implementation appDependencies.koinAndroid
+    implementation appDependencies.koinAndroidViewModel
+
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.androidxJunit
     androidTestImplementation testDependencies.espressoCore
