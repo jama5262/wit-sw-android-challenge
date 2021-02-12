@@ -5,7 +5,7 @@ ext {
     // Android Core
     compileSdkVer = 30
     targetSdkVer = 30
-    minSdkVer = 16
+    minSdkVer = 17
     buildToolsVer = "30.0.2"
 
     // App Versioning

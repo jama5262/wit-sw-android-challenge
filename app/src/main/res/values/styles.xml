@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="App.MaterialComponents.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/libre_baskerville</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="App.MaterialComponents.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/libre_baskerville</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="App.MaterialComponents.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/libre_baskerville</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="App.MaterialComponents.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/libre_baskerville</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+</resources>

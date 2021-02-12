@@ -19,6 +19,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        vectorDrawables.useSupportLibrary = true
+
         buildConfigField "String", "OPEN_WEATHER_API_KEY", keystoreProperties['OPEN_WEATHER_API_KEY']
     }
 
