@@ -12,9 +12,9 @@ fun WeatherResultResponse.toDomain(): WeatherResult {
 private fun CityResponse.toDomain(): City {
     return City(
         this.name,
-        this.mainResponse.toDomain(),
-        this.weatherResponse.map { it.toDomain() },
-        this.windResponse.toDomain(),
+        this.main.toDomain(),
+        this.weather.map { it.toDomain() },
+        this.wind.toDomain(),
         this.visibility
     )
 }

@@ -1,6 +1,7 @@
 package com.jama.wit_sw_android_challenge.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +23,14 @@ class CitiesFragment : Fragment() {
 
         rootView = inflater.inflate(R.layout.fragment_cities, container, false)
 
+        setUpObservers()
+
         return rootView
+    }
+
+    private fun setUpObservers() {
+        citiesViewModel.weatherResult.observe(viewLifecycleOwner) {
+            Log.e("jjj", "$it")
+        }
     }
 }

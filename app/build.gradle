@@ -64,6 +64,8 @@ dependencies {
     implementation appDependencies.koinAndroid
     implementation appDependencies.koinAndroidViewModel
 
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.androidxJunit
     androidTestImplementation testDependencies.espressoCore

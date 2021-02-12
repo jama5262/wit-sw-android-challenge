@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface OpenWeatherService {
 
-    @GET
+    @GET("group")
     suspend fun getWeather(
         @Query("id") id: String,
         @Query("appid") appId: String

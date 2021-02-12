@@ -4,6 +4,6 @@ import com.jama.domain.usecases.GetWeatherUseCase
 import org.koin.dsl.module
 
 val useCaseModule = module {
-    single { GetWeatherUseCase(get()) }
+    single { GetWeatherUseCase(weatherRepository = get()) }
 }
 
