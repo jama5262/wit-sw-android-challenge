@@ -3,6 +3,9 @@ plugins {
     id 'kotlin-android'
 }
 
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(rootProject.file("keystore.properties")))
+
 android {
     compileSdkVersion compileSdkVer
     buildToolsVersion buildToolsVersion
@@ -15,6 +18,8 @@ android {
         versionName versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "OPEN_WEATHER_API_KEY", keystoreProperties['OPEN_WEATHER_API_KEY']
     }
 
     buildTypes {
