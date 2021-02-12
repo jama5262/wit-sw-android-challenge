@@ -33,12 +33,18 @@ android {
             minifyEnabled false
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -64,7 +70,7 @@ dependencies {
     implementation appDependencies.koinAndroid
     implementation appDependencies.koinAndroidViewModel
 
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation appDependencies.keil
 
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.androidxJunit

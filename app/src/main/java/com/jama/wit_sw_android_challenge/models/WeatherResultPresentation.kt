@@ -1,5 +1,7 @@
 package com.jama.wit_sw_android_challenge.models
 
-data class WeatherResultPresentation(
+import java.io.Serializable
+
+data class WeatherResultPresentation (
     val list: List<CityPresentation>
-)
+): Serializable
