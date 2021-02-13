@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jama.wit_sw_android_challenge.R
 import com.jama.wit_sw_android_challenge.adapters.createCitiesAdapter
-import com.jama.wit_sw_android_challenge.databinding.CityItemBinding
 import com.jama.wit_sw_android_challenge.databinding.FragmentCitiesBinding
 import com.jama.wit_sw_android_challenge.helpers.ItemSpacing
 import com.jama.wit_sw_android_challenge.helpers.navigateToFragment
@@ -53,7 +53,12 @@ class CitiesFragment : Fragment(), CitiesInterface {
 
     private fun setUpRecyclerView() {
         binding.citiesRecyclerView.apply {
-            layoutManager = LinearLayoutManager(requireContext())
+            layoutManager = GridLayoutManager(
+                requireContext(),
+                2,
+                LinearLayoutManager.VERTICAL,
+                false
+            )
             adapter = cityWeatherAdapter
             addItemDecoration(ItemSpacing())
         }

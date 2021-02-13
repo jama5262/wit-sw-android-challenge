@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">wit-sw-android-challenge</string>
+    <string name="app_name">Weather App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="degree_celcius">°C</string>
     <string name="mbar">mBar</string>

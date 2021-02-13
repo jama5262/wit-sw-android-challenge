@@ -13,12 +13,21 @@ class ItemSpacing: RecyclerView.ItemDecoration() {
         state: RecyclerView.State
     ) {
         outRect.bottom = dpToPx(parent.context, 20)
-        outRect.left = dpToPx(parent.context, 20)
-        outRect.right = dpToPx(parent.context, 20)
+
+        when (parent.getChildAdapterPosition(view) % 2) {
+            0 -> {
+                outRect.left = dpToPx(parent.context, 20)
+                outRect.right = dpToPx(parent.context, 5)
+            }
+            else -> {
+                outRect.left = dpToPx(parent.context, 5)
+                outRect.right = dpToPx(parent.context, 20)
+            }
+        }
 
         when(parent.getChildAdapterPosition(view)) {
-            0 -> {
-                outRect.top = dpToPx(parent.context, 10)
+            0, 1 -> {
+                outRect.top = dpToPx(parent.context, 20)
             }
         }
     }

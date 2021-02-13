@@ -17,7 +17,7 @@ fun createCitiesAdapter(citiesInterface: CitiesInterface): ListAdapter<CityPrese
             onBindViewHolder = { holder, _, item ->
                 holder.binding.apply {
                     val temp = item.main.temp.toCelcius()
-                    val city = item.name
+                    val city = "${item.name}, ${item.sys.countryCode}"
                     val weather = item.weather[0].weather
                     val weatherIcon = getWeatherIcon(weather)
                     imageViewWeather.setImageResource(weatherIcon)

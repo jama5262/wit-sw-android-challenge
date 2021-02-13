@@ -16,6 +16,11 @@
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
+    <style name="App.MaterialComponents.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/libre_baskerville_bold</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
     <style name="App.MaterialComponents.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
         <item name="fontFamily">@font/libre_baskerville</item>
         <item name="android:textColor">?attr/colorPrimary</item>
