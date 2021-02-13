@@ -1,6 +1,6 @@
 package com.jama.domain.models
 
 data class Weather(
-    val main: String,
+    val weather: String,
     val description: String
 )

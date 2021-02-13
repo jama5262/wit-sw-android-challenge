@@ -19,6 +19,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        vectorDrawables.useSupportLibrary = true
+
         buildConfigField "String", "OPEN_WEATHER_API_KEY", keystoreProperties['OPEN_WEATHER_API_KEY']
     }
 
@@ -33,12 +35,18 @@ android {
             minifyEnabled false
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -55,6 +63,17 @@ dependencies {
     implementation appDependencies.appCompat
     implementation appDependencies.androidxKtx
     implementation appDependencies.constraintLayout
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation appDependencies.navigationFragment
+    implementation appDependencies.navigationUI
+
+    // Koin
+    implementation appDependencies.koinAndroid
+    implementation appDependencies.koinAndroidViewModel
+
+    implementation appDependencies.keil
+    implementation 'com.android.support:cardview-v7:28.0.0'
 
     testImplementation testDependencies.junit
     androidTestImplementation testDependencies.androidxJunit

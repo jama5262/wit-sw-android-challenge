@@ -1,0 +1,3 @@
+package com.jama.wit_sw_android_challenge.adapters
+
+class LoadingViewHolder

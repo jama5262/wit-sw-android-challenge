@@ -5,10 +5,10 @@ import com.jama.domain.repositories.WeatherRepository
 
 class GetWeatherUseCase (
     private val weatherRepository: WeatherRepository
-): BaseUseCase<String, WeatherResult> {
+): BaseUseCase<WeatherResult> {
 
-    override suspend fun invoke(param: String): WeatherResult {
-        return weatherRepository.getWeather(param)
+    override suspend fun invoke(): WeatherResult {
+        return weatherRepository.getWeather()
     }
 
 }

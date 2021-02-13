@@ -3,5 +3,5 @@ package com.jama.domain.repositories
 import com.jama.domain.models.WeatherResult
 
 interface WeatherRepository {
-    suspend fun getWeather(appId: String): WeatherResult
+    suspend fun getWeather(): WeatherResult
 }

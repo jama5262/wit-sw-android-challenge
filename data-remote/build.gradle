@@ -13,4 +13,5 @@ dependencies {
 
     api dataDependencies.retrofit
     api dataDependencies.moshiConverter
+    api dataDependencies.logInterceptor
 }

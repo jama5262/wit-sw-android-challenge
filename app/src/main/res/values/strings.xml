@@ -1,3 +1,31 @@
 <resources>
-    <string name="app_name">wit-sw-android-challenge</string>
+    <string name="app_name">Weather App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="degree_celcius">°C</string>
+    <string name="mbar">mBar</string>
+    <string name="pressure_of">Pressure of</string>
+    <string name="visibility_of">Visibility of upto</string>
+    <string name="km">km</string>
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+    <string name="wind">Wind</string>
+    <string name="sample_wind">3.6 m/s</string>
+    <string name="ms">m/s</string>
+    <string name="humidity">Humidity</string>
+    <string name="sample_humidity">60%</string>
+    <string name="temp_max_min">Temp</string>
+    <string name="sample_temp_max_min">14 &#8211; 15 °C</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sample_sunrise">7:20 AM</string>
+    <string name="sunset">Sunset</string>
+    <string name="sample_sunset">7:20 PM</string>
+    <string name="sample_date_time">Thu, Feb 11, 2020 12:45 PM</string>
+    <string name="sample_city_name">London, UK</string>
+    <string name="sample_temp">13</string>
+    <string name="sample_temp_2">Feels like 15</string>
+    <string name="temp_2">Feels like</string>
+    <string name="sample_weather_description">Light intensity shower rain</string>
+    <string name="sample_weather_pressure">Pressure of 1020 mBar</string>
+    <string name="sample_weather_visibility">Visibility of upto 10km</string>
+
 </resources>
