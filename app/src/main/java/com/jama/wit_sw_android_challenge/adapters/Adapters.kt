@@ -3,11 +3,12 @@ package com.jama.wit_sw_android_challenge.adapters
 import androidx.recyclerview.widget.ListAdapter
 import com.jama.wit_sw_android_challenge.R
 import com.jama.wit_sw_android_challenge.models.CityPresentation
+import com.jama.wit_sw_android_challenge.ui.CitiesInterface
 import me.ibrahimyilmaz.kiel.adapterOf
 import me.ibrahimyilmaz.kiel.core.RecyclerViewHolder
 import kotlin.math.roundToInt
 
-fun createCitiesAdapter(): ListAdapter<CityPresentation, RecyclerViewHolder<CityPresentation>> {
+fun createCitiesAdapter(citiesInterface: CitiesInterface): ListAdapter<CityPresentation, RecyclerViewHolder<CityPresentation>> {
     return adapterOf {
         register(
             layoutResource = R.layout.city_item,
@@ -31,6 +32,10 @@ fun createCitiesAdapter(): ListAdapter<CityPresentation, RecyclerViewHolder<City
                     textViewTemperature.text = temp.toString()
                     textViewCity.text = city
                     textViewMain.text = weather
+
+                    root.setOnClickListener {
+                        citiesInterface.navigate(item)
+                    }
                 }
             }
         )
