@@ -47,7 +47,6 @@ class CitiesFragment : Fragment(), CitiesInterface {
 
     private fun setUpObservers() {
         citiesViewModel.weatherResult.observe(viewLifecycleOwner) {
-            Log.e("jjj", "$it")
             cityWeatherAdapter.submitList(it)
         }
     }

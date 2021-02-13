@@ -20,7 +20,7 @@
         android:label="fragment_weather"
         tools:layout="@layout/fragment_weather" >
         <argument
-            android:name="weatherResult"
-            app:argType="com.jama.wit_sw_android_challenge.models.WeatherResultPresentation" />
+            android:name="cityWeather"
+            app:argType="com.jama.wit_sw_android_challenge.models.CityPresentation" />
     </fragment>
 </navigation>

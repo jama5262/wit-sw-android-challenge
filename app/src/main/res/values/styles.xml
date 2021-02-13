@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="App.MaterialComponents.Headline2" parent="TextAppearance.MaterialComponents.Headline3">
+    <style name="App.MaterialComponents.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="fontFamily">@font/libre_baskerville</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="App.MaterialComponents.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/libre_baskerville</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="App.MaterialComponents.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/libre_baskerville_bold</item>
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
     <style name="App.MaterialComponents.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
         <item name="fontFamily">@font/libre_baskerville</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="App.MaterialComponents.Subtitle1.Bold" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/libre_baskerville_bold</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
@@ -18,6 +34,11 @@
 
     <style name="App.MaterialComponents.Body2" parent="TextAppearance.MaterialComponents.Body2">
         <item name="fontFamily">@font/libre_baskerville</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="App.MaterialComponents.Body2.Bold" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/libre_baskerville_bold</item>
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 

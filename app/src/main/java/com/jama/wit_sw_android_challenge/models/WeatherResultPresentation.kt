@@ -4,4 +4,4 @@ import java.io.Serializable
 
 data class WeatherResultPresentation (
     val list: List<CityPresentation>
-): Serializable
+)

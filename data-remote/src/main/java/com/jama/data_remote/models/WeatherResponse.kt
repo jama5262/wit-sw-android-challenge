@@ -1,6 +1,8 @@
 package com.jama.data_remote.models
 
+import com.squareup.moshi.Json
+
 data class WeatherResponse(
-    val main: String,
+    @field: Json(name = "main") val weather: String,
     val description: String
 )

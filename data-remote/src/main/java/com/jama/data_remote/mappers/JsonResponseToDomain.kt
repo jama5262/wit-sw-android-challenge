@@ -12,15 +12,26 @@ fun WeatherResultResponse.toDomain(): WeatherResult {
 private fun CityResponse.toDomain(): City {
     return City(
         this.name,
+        this.timestamp,
         this.main.toDomain(),
         this.weather.map { it.toDomain() },
         this.wind.toDomain(),
-        this.visibility
+        this.visibility,
+        this.coordinate.toDomain(),
+        this.sys.toDomain()
     )
 }
 
+private fun CoordinateResponse.toDomain(): Coordinate {
+    return Coordinate(this.lng, this.lat)
+}
+
+private fun SysResponse.toDomain(): Sys {
+    return Sys(this.countryCode, this.sunrise, this.sunset)
+}
+
 private fun MainResponse.toDomain(): Main {
-    return Main(this.temp, this.feelsLike, this.pressure, this.humidity)
+    return Main(this.temp, this.tempMin, this.tempMax, this.feelsLike, this.pressure, this.humidity)
 }
 
 private fun WindResponse.toDomain(): Wind {
@@ -28,5 +39,5 @@ private fun WindResponse.toDomain(): Wind {
 }
 
 private fun WeatherResponse.toDomain(): Weather {
-    return Weather(this.main, this.description)
+    return Weather(this.weather, this.description)
 }
