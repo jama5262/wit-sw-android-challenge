@@ -5,14 +5,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jama.domain.usecases.GetWeatherUseCase
 import com.jama.wit_sw_android_challenge.mappers.toPresentation
-import com.jama.wit_sw_android_challenge.models.WeatherResultPresentation
+import com.jama.wit_sw_android_challenge.models.CityPresentation
 import kotlinx.coroutines.launch
 
 class CitiesViewModel(
     private val getWeatherUseCase: GetWeatherUseCase
-): ViewModel() {
+) : ViewModel() {
 
-    private val _weatherResult = MutableLiveData<WeatherResultPresentation>()
+    private val _weatherResult = MutableLiveData<List<CityPresentation>>()
     val weatherResult = _weatherResult
 
     init {
@@ -21,7 +21,7 @@ class CitiesViewModel(
 
     private fun getWeather() {
         viewModelScope.launch {
-            _weatherResult.value = getWeatherUseCase.invoke().toPresentation()
+            _weatherResult.value = getWeatherUseCase.invoke().toPresentation().list
         }
     }
 }

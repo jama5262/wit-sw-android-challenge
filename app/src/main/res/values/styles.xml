@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="App.MaterialComponents.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+    <style name="App.MaterialComponents.Headline2" parent="TextAppearance.MaterialComponents.Headline3">
         <item name="fontFamily">@font/libre_baskerville</item>
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
