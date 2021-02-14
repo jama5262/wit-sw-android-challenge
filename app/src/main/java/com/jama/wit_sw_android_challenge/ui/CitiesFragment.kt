@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -20,6 +21,8 @@ import com.jama.wit_sw_android_challenge.helpers.ItemSpacing
 import com.jama.wit_sw_android_challenge.helpers.navigateToFragment
 import com.jama.wit_sw_android_challenge.models.CityPresentation
 import com.jama.wit_sw_android_challenge.viewModels.CitiesViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CitiesFragment : Fragment(), CitiesInterface {
@@ -51,6 +54,7 @@ class CitiesFragment : Fragment(), CitiesInterface {
 
     private fun initialize() {
         setUpRecyclerView()
+        setUpSwipeToRefresh()
         setUpObservers()
     }
 
@@ -77,8 +81,15 @@ class CitiesFragment : Fragment(), CitiesInterface {
         }
     }
 
+    private fun setUpSwipeToRefresh() {
+        binding.swipeRefresh.setOnRefreshListener {
+            citiesViewModel.getWeather()
+        }
+    }
+
     private fun showLoading(show: Boolean) {
         binding.apply {
+            swipeRefresh.isRefreshing = show
             includeLoading.root.visibility = if (show) View.VISIBLE else View.GONE
             citiesRecyclerView.visibility = if (!show) View.VISIBLE else View.GONE
         }

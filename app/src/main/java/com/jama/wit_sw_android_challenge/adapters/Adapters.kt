@@ -11,6 +11,10 @@ import me.ibrahimyilmaz.kiel.core.RecyclerViewHolder
 
 fun createCitiesAdapter(citiesInterface: CitiesInterface): ListAdapter<CityPresentation, RecyclerViewHolder<CityPresentation>> {
     return adapterOf {
+        diff(
+            areContentsTheSame = { old, new -> old == new },
+            areItemsTheSame = { old, new -> old.name == new.name },
+        )
         register(
             layoutResource = R.layout.city_item,
             viewHolder = ::CityWeatherViewHolder,
