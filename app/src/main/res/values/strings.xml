@@ -28,5 +28,11 @@
     <string name="sample_weather_pressure">Pressure of 1020 mBar</string>
     <string name="sample_weather_visibility">Visibility of upto 10km</string>
     <string name="fetching_weather">Fetching the Weather</string>
+    <string name="package_name">com.jama.wit_sw_android_challenge</string>
+    <string name="show_tutorial">Show Tutorial</string>
+    <string name="tutorial_desc_4">If you\'re ever lost, you can start the tutorial from here</string>
+    <string name="tutorial_desc_3">You can also swipe from the top 👆 to refresh</string>
+    <string name="tutorial_desc_2">Tap on any of the cities 🏙 to see more weather info</string>
+    <string name="tutorial_desc_1">Welcome to the weather app ☁, where you get to see the weather for 11 different cities\n\n\Tap anywhere to continue</string>
 
 </resources>
