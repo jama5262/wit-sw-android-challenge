@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.transition.TransitionInflater
 import com.jama.wit_sw_android_challenge.R
 import com.jama.wit_sw_android_challenge.databinding.FragmentWeatherBinding
 import com.jama.wit_sw_android_challenge.helpers.*
@@ -28,19 +29,24 @@ class WeatherFragment : Fragment() {
     }
 
     private fun initialize() {
-        val cityWeather = requireArguments().getSerializable("cityWeather") as CityPresentation
-        setUpViews(cityWeather)
+        setUpSharedAnimation()
+        setUpViews()
     }
 
-    private fun setUpViews(cityWeather: CityPresentation) {
+    private fun setUpViews() {
+        val cityWeather =
+            requireArguments().getSerializable(Constants.CITY_WEATHER) as CityPresentation
         binding.apply {
-            val city = cityWeather.name
+            val city = "${cityWeather.name}, ${cityWeather.sys.countryCode}"
             textViewCity.text = city
             val dateTime = getDateTime(cityWeather.timestamp)
             textViewDateTime.text = dateTime
 
             val temp = cityWeather.main.temp.toCelcius().toString()
-            textViewTemperature.text = temp
+            textViewTemperature.apply {
+                text = temp
+                transitionName = cityWeather.name
+            }
             val tempFeelLike =
                 "${getString(R.string.temp_2)} ${cityWeather.main.feelsLike.toCelcius()}" +
                         getString(R.string.degree_celcius)
@@ -55,8 +61,9 @@ class WeatherFragment : Fragment() {
                 "${getString(R.string.pressure_of)} ${cityWeather.main.pressure} " +
                         getString(R.string.mbar)
             textViewPressure.text = pressure
-            val visibility = "${getString(R.string.visibility_of)} ${cityWeather.visibility.toKm()}" +
-                    getString(R.string.km)
+            val visibility =
+                "${getString(R.string.visibility_of)} ${cityWeather.visibility.toKm()}" +
+                        getString(R.string.km)
             textViewVisibility.text = visibility
 
             val windSpeed = "${cityWeather.wind.speed} ${getString(R.string.ms)}"
@@ -75,5 +82,16 @@ class WeatherFragment : Fragment() {
         }
     }
 
+    private fun setUpSharedAnimation() {
+        sharedElementEnterTransition = TransitionInflater.from(context)
+            .inflateTransition(android.R.transition.move).apply {
+                duration = Constants.SHARED_ANIM_DELAY
+            }
+
+        sharedElementReturnTransition = TransitionInflater.from(context)
+            .inflateTransition(android.R.transition.move).apply {
+                duration = Constants.SHARED_ANIM_DELAY
+            }
+    }
 
 }
