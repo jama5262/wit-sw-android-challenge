@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Fetching the Weather"
+        android:text="@string/fetching_weather"
         android:textAppearance="@style/App.MaterialComponents.Subtitle1"
         app:layout_constraintEnd_toEndOf="@+id/progressBar"
         app:layout_constraintHorizontal_bias="0.5"

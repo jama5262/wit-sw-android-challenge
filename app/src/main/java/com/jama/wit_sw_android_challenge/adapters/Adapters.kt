@@ -11,22 +11,29 @@ import me.ibrahimyilmaz.kiel.core.RecyclerViewHolder
 
 fun createCitiesAdapter(citiesInterface: CitiesInterface): ListAdapter<CityPresentation, RecyclerViewHolder<CityPresentation>> {
     return adapterOf {
+        diff(
+            areContentsTheSame = { old, new -> old == new },
+            areItemsTheSame = { old, new -> old.name == new.name },
+        )
         register(
             layoutResource = R.layout.city_item,
             viewHolder = ::CityWeatherViewHolder,
             onBindViewHolder = { holder, _, item ->
                 holder.binding.apply {
-                    val temp = item.main.temp.toCelcius()
+                    val temp = item.main.temp.toCelcius().toString()
                     val city = "${item.name}, ${item.sys.countryCode}"
                     val weather = item.weather[0].weather
                     val weatherIcon = getWeatherIcon(weather)
                     imageViewWeather.setImageResource(weatherIcon)
-                    textViewTemperature.text = temp.toString()
+                    textViewTemperature.apply {
+                        text = temp
+                        transitionName = item.name
+                    }
                     textViewCity.text = city
                     textViewMain.text = weather
 
                     root.setOnClickListener {
-                        citiesInterface.navigate(item)
+                        citiesInterface.navigate(item, textViewTemperature)
                     }
                 }
             }
