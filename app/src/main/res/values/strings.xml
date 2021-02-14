@@ -27,5 +27,6 @@
     <string name="sample_weather_description">Light intensity shower rain</string>
     <string name="sample_weather_pressure">Pressure of 1020 mBar</string>
     <string name="sample_weather_visibility">Visibility of upto 10km</string>
+    <string name="fetching_weather">Fetching the Weather</string>
 
 </resources>

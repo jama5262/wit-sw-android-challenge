@@ -15,13 +15,23 @@ class CitiesViewModel(
     private val _weatherResult = MutableLiveData<List<CityPresentation>>()
     val weatherResult = _weatherResult
 
+    private val _showLoading = MutableLiveData<Boolean>(false)
+    val showLoading = _showLoading
+
     init {
         getWeather()
     }
 
     private fun getWeather() {
         viewModelScope.launch {
+            showLoading(true)
             _weatherResult.value = getWeatherUseCase.invoke().toPresentation().list
+            showLoading(false)
         }
     }
+
+    private fun showLoading(show: Boolean) {
+        _showLoading.value = show
+    }
+
 }

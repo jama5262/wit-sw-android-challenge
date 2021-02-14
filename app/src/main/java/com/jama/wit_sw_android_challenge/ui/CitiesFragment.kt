@@ -58,6 +58,10 @@ class CitiesFragment : Fragment(), CitiesInterface {
         citiesViewModel.weatherResult.observe(viewLifecycleOwner) {
             cityWeatherAdapter.submitList(it)
         }
+
+        citiesViewModel.showLoading.observe(viewLifecycleOwner) {
+            showLoading(it)
+        }
     }
 
     private fun setUpRecyclerView() {
@@ -70,6 +74,13 @@ class CitiesFragment : Fragment(), CitiesInterface {
             )
             adapter = cityWeatherAdapter
             addItemDecoration(ItemSpacing())
+        }
+    }
+
+    private fun showLoading(show: Boolean) {
+        binding.apply {
+            includeLoading.root.visibility = if (show) View.VISIBLE else View.GONE
+            citiesRecyclerView.visibility = if (!show) View.VISIBLE else View.GONE
         }
     }
 
