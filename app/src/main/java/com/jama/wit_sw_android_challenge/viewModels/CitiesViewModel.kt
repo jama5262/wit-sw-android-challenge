@@ -17,7 +17,7 @@ class CitiesViewModel(
     private val _weatherResult = MutableLiveData<List<CityPresentation>>()
     val weatherResult = _weatherResult
 
-    private val _showLoading = MutableLiveData<Boolean>(true)
+    private val _showLoading = MutableLiveData(true)
     val showLoading = _showLoading
 
     private val _showTutorial = MutableLiveData<Boolean>()

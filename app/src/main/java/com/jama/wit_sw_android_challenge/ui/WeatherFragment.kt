@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import androidx.fragment.app.Fragment
 import androidx.transition.TransitionInflater
+import com.jama.wit_sw_android_challenge.helpers.LeafletWebViewClient
 import com.jama.wit_sw_android_challenge.R
 import com.jama.wit_sw_android_challenge.databinding.FragmentWeatherBinding
 import com.jama.wit_sw_android_challenge.helpers.*
 import com.jama.wit_sw_android_challenge.models.CityPresentation
+import com.jama.wit_sw_android_challenge.models.CoordinatePresentation
 
 class WeatherFragment : Fragment() {
 
@@ -79,7 +82,19 @@ class WeatherFragment : Fragment() {
             textViewSunrise.text = sunriseDateTime
             val sunsetDateTime = getTime(cityWeather.sys.sunset)
             textViewSunset.text = sunsetDateTime
+
+            setUpLeafletMap(webViewMap, cityWeather.coordinate)
         }
+    }
+
+    private fun setUpLeafletMap(webView: WebView, coordinate: CoordinatePresentation) {
+        webView.settings.javaScriptEnabled = true
+        webView.loadUrl(Constants.LEAFLET_FILE_LOCATION)
+        webView.webViewClient = LeafletWebViewClient(
+            webView,
+            coordinate.lat.toString(),
+            coordinate.lng.toString()
+        )
     }
 
     private fun setUpSharedAnimation() {
